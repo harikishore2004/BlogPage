@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+{% block body %}
+
+        <!-- Page Header-->
+        <header class="masthead" style="background-image: url('  {{ url_for('static',filename = 'assets/img/post-bg.jpg') }}')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="post-heading">
+                            <h1>Case study of China</h1>
+                            <h2 class="subheading">Initiatives by China</h2>
+                            <span class="meta">
+                                Posted by
+                                <a href="#!">Person</a>
+                                on July 8, 2024
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Post Content-->
+        <article class="mb-4">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <h1>Key Components and Technologies</h1>
+                        <p></p>
+                        <b>Internet of Things (IoT)</b><p>IOT devices are used for monitoring soil moisture, humidity, nutrient levels, and weather conditions. These devices also automate watering according to the soil moisture levels. </p>
+                        <b>Big Data and Analytics</b><p>The collected data is from different IOT devices is then analysed to make informed decisions about planting, irrigation and harvesting and this data is also used to forecast crop yields, pest outbreaks and weather patterns.</p>
+                        <b>Drone and UAVs</b><p>Drones and UAVs plays an important role as they provide facilities such as monitoring crop health, growth, and identifying problem areas, crop health, growth, and identifying problem areas, accurate spraying of pesticides and fertilizers.</p>
+                        <h2>Benefits of Smart Agriculture in China</h2>
+                        <p>1. <strong>Increased efficiency</strong>Automation and data-driven decisions lead to higher productivity and lower labour costs.</p>
+                        <p>1. <strong>Sustainability</strong>Precision farming techniques reduce waste and optimize resource use.</p>
+                        <p>1. <strong>Food Security</strong>Improved crop yields and resilience to climate change.</p>
+                        <p>1. <strong>Economic Grouth</strong>Technological advancements create new opportunities and markets for farmers.</p>
+                        <h3>Conclusion</h3>
+                        <p>China's model of smart agriculture represents a significant shift towards modern, technology-driven farming practices. By leveraging IoT, AI, big data, and drones, China aims to improve agricultural productivity, sustainability, and food security. While challenges remain, the continued development and adoption of smart agriculture technologies hold great promise for the future of farming in China and beyond.</p>
+                    </div>
+                </div>
+            </div>
+        </article>
+        {% endblock %}
+        

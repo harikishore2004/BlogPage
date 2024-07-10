@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+{% block body %}
+
+        <!-- Page Header-->
+        
+        <header class="masthead" style="background-image: url('  {{ url_for('static',filename = 'assets/img/about-bg.jpg') }}')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="page-heading">
+                            <h1>About US</h1>
+                            <span class="subheading">This is what we do.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Main Content-->
+        <main class="mb-4">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-10 col-xl-10">
+                        <h2>Agriculture industry</h2>
+                        <p>Agriculture industry is one of the vital and important industry for any country as it produces different products which are the major source of energy for all the individuals and these products helps us to maintain the flow of energy.</p>
+                        <p>But since the last few decades this industry is in a critical condition because of the problems created by the humans itself, problems like climate change, global warming, soil pollution. have been drastically reducing the production of this industry.</p>
+                        <p>Also, the steps taken to increase the production of this industry (for example usage of pesticides, fertilizers) are becoming a threat for us only, causing many serious diseases. </p>
+
+                        <h3>Technology as the savior of Agriculture industry</h3>
+                        <p>In today’s world every problem can be resolved by the usage of technology. As we can see that the work which used to consume many hours and took many expertise for completion today it can be done within a blink of eye, with the integration of different AI drives tools and machine learning models predicting the future data is now becoming possible </p>
+                        <P>The same technology can be used to revive Agricultural industry also and many countries such as China, Japan, Switzerland have also achieved positive results by integrating advanced technology.</P>
+                        
+                    </div>
+                </div>
+            </div>
+        </main>
+        {% endblock %}

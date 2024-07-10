@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+{% block body %}
+
+        <!-- Page Header-->
+        <header class="masthead" style="background-image: url('  {{ url_for('static',filename = 'assets/img/post-bg.jpg') }}')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="post-heading">
+                            <h1>Case study of Japan</h1>
+                            <h2 class="subheading"> Japan included several techniques to tackel the problems of their agriculture industry</h2>
+                            <span class="meta">
+                                Posted by
+                                <a href="#!">Person</a>
+                                on July 8, 2024
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Post Content-->
+        <article class="mb-4">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <h1>Japan's model</h1>
+                        <p>1.	Precision Farming: Japan has been a leader in precision farming techniques, utilizing technologies such as GPS, sensors, and data analytics to optimize crop production and resource management. </p>
+                        <p>2.	Robotics and automation : Japan has integrated automation to tackle the problem of labour shortage and increase efficiency.</p>
+                        <p>3.	Smart agriculture: The use of IOT(internet of things) and AI (artificial intelligence) enabled Japan with accurate prediction of climate, precise data of nutrients level in the soil and many other capabilities.</p>
+                        <p>Combined these major steps are now proving to be a game changer for their agriculture industry.</p>
+                        <h2>statistics of Japan </h2>
+                        <p>Sales generated within the smart agriculture market in Japan were forecasted to reach over 70 billion Japanese yen by fiscal year 2029, up from a market size of under ten billion yen in fiscal year 2015. The Japanese smart agriculture market includes a variety of technological and artificial intelligence-based solutions to digitalize and efficiently support production processes within the agricultural sector. (according to statista.com) </p>
+                        <p> In 2023, the exports of agricultural commodities from Japan were valued at around 906 billion Japanese yen, an increase from about 886 billion in the previous year. Agricultural goods made up the majority of primary sector products exported from Japan.</p>
+                    </div>
+                </div>
+            </div>
+        </article>
+        {% endblock %}
+        

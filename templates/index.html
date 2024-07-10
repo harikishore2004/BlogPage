@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+{% block body %}
+        <!-- Page Header-->
+        <header class="masthead" style="background-image: url('{{ url_for('static', filename='assets/img/home-bg.jpg') }}')">
+
+
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="site-heading">
+                            <h1>Smart Farming</h1>
+                            <span class="subheading">How AI is transforming Agriculture</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Main Content-->
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <!-- Post preview-->
+                    <div class="post-preview">
+                        <a href="post">
+                            <h2 class="post-title">How does AI works? </h2>
+                            <h3 class="post-subtitle"> AI in agriculture works by utilizing various technologies to improve farming practices.</h3>
+                        </a>
+                        <p class="post-meta">
+                            Posted by
+                            <a href="#!">person</a>
+                            on July 8, 2024
+                        </p>
+                    </div>
+                    <!-- Divider-->
+                    <hr class="my-4" />
+                    <!-- Post preview-->
+                    <div class="post-preview">
+                        <a href="post1"><h2 class="post-title">Case study of Japan</h2></a>
+                        <p class="post-meta">
+                            Posted by
+                            <a href="#!">person</a>
+                            on July 8, 2024
+                        </p>
+                    </div>
+                    <!-- Divider-->
+                    <hr class="my-4" />
+                    <!-- Post preview-->
+                    <div class="post-preview">
+                        <a href="post2"><h2 class="post-title">Case study of China</h2></a>
+                        <p class="post-meta">
+                            Posted by
+                            <a href="#!">person</a>
+                            on June 2, 2023
+                        </p>
+                    </div>
+                    {% endblock %}
+ 
