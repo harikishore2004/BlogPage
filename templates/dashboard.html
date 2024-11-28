@@ -1,0 +1,98 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<!-- Page Header-->
+<header class="masthead" style="background-image: url('{{ url_for('static', filename='assets/img/home-bg.jpg') }}')">
+    <div class="container position-relative px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <div class="site-heading">
+                    <h1>Smart Farming</h1>
+                    <span class="subheading">How AI is transforming Agriculture</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .green-button {
+            background-color: #9ACD32; /* Light green color */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 12px;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .green-button:hover {
+            background-color: #228b22; /* Darker green on hover */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Adds a shadow on hover */
+        }
+    </style>
+</head>
+<body>
+
+<!-- Main Content-->
+<div class="container px-4 px-lg-5">
+    <div class="row gx-4 gx-lg-5 justify-content-center">
+        <div class="col-md-10 col-lg-8 col-xl-7">
+            <div>
+                <h1>File uploader</h1>
+                <hr>
+                
+                <form action="/uploader" method="post" enctype="multipart/form-data">
+                <input type="file" name="file1">
+                <button class="green-button" type = 'submit'>Submit</button>
+
+                </form>
+                
+                <hr>
+            </div>
+            <h1>Edit the posts</h1>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>S.no</th>
+                        <th>Title</th>
+                        <th>Name</th>
+                        <th style="width: 200px;">Date</th>  <!-- Set the width here -->
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for post in posts %}
+                    <tr>
+                        <td>{{post.sno}}</td>
+                        <td>{{post.title}}</td>
+                        <td>{{post.name}}</td>
+                        <td style="width: 200px;">{{post.date}}</td>  <!-- Set the width here -->
+                        <td><a href="edit/{{post.sno}}"><button class="green-button">Edit</button></a></td>
+                        <td><button class="green-button">Delete</button></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            
+
+                <a href="/edit/0"><button class="green-button">Add a post</button></a>
+                <a href="/logout"><button class="green-button">Logout</button></a>
+
+
+                </tbody>
+              </table>
+
+        </div>
+    </div>
+</div>
+{% endblock %}

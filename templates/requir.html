@@ -1,0 +1,91 @@
+{% extends "layout.html" %}
+{% block body %}
+
+        <!-- Page Header-->
+        <header class="masthead" style="background-image: url('  {{ url_for('static',filename = 'assets/img/post-bg.jpg') }}')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="post-heading">
+                            <h1>How does AI works?</h1>
+                            <h2 class="subheading"> AI in agriculture works by utilizing various technologies such as machine learning, computer vision, and data analytics to improve farming practices.</h2>
+                            <span class="meta">
+                                Posted by
+                                <a href="#!">Person</a>
+                                on July 8, 2024
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Post Content-->
+        <article class="mb-4">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <h1>Here’s how it generally operates</h1>
+                        <p>Data Collection: AI systems gather data from various sources including sensors, satellites, drones, and even smartphones. This data can include information about soil health, weather conditions, crop growth stages, and pest infestations.</p>
+                        <p>Data Analysis: Once the data is collected, AI algorithms analyze it to identify patterns, trends, and anomalies. For example, machine learning algorithms can predict crop yields based on historical data and current environmental conditions.</p>
+                        <p>Decision Making: AI systems make recommendations or decisions based on the analyzed data. These decisions can include when to plant, irrigate, fertilize, or harvest crops, as well as when and where to apply pesticides or herbicides.</p>
+                        <p>Automation: AI-powered machinery and robots can automate various tasks on the farm, such as planting seeds, monitoring crop health, and harvesting crops. For example, autonomous tractors equipped with AI technology can plow fields more efficiently than traditional tractors.</p>
+                        <p>Precision Farming: AI enables precision farming techniques, where farmers can apply inputs such as water, fertilizer, and pesticides with greater precision, minimizing waste and environmental impact. For instance, AI-powered irrigation systems can deliver the right amount of water to each plant based on its individual needs.</p>
+                        <p>Crop Monitoring and Management: AI can monitor crop health using drones equipped with cameras and sensors. By analyzing images of crops, AI can detect diseases, pests, and nutrient deficiencies early, allowing farmers to take timely action to mitigate losses.</p>
+                        <p>Market Analysis: AI can also help farmers make informed decisions about which crops to plant based on market demand, pricing trends, and other factors. By analyzing market data, AI systems can optimize crop selection to maximize profits.</p>
+
+                        <h2 class="section-heading">Reaching for the Stars</h2>
+                        <p>As we got further and further away, it [the Earth] diminished in size. Finally it shrank to the size of a marble, the most beautiful you can imagine. That beautiful, warm, living object looked so fragile, so delicate, that if you touched it with a finger it would crumble and fall apart. Seeing this has to change a man.</p>
+                        <a href="#!"><img class="img-fluid" src="assets/img/post-sample-image.jpg" alt="..." /></a>
+                        <span class="caption text-muted">To go places and do things that have never been done before – that’s what living is all about.</span>
+                        <p>Space, the final frontier. These are the voyages of the Starship Enterprise. Its five-year mission: to explore strange new worlds, to seek out new life and new civilizations, to boldly go where no man has gone before.</p>
+                        <p>As I stand out here in the wonders of the unknown at Hadley, I sort of realize there’s a fundamental truth to our nature, Man must explore, and this is exploration at its greatest.</p>
+                        <p>
+                            Placeholder text by
+                            <a href="http://spaceipsum.com/">Space Ipsum</a>
+                            &middot; Images by
+                            <a href="https://www.flickr.com/photos/nasacommons/">NASA on The Commons</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </article>
+        {% endblock %}
+============================================================================
+index
+              <!-- Divider-->
+              <hr class="my-4" />
+              <!-- Post preview-->
+              <div class="post-preview">
+                  <a href="post.html">
+                      <h2 class="post-title">Science has not yet mastered prophecy</h2>
+                      <h3 class="post-subtitle">We predict too much for the next year and yet far too little for the next ten.</h3>
+                  </a>
+                  <p class="post-meta">
+                      Posted by
+                      <a href="#!">person</a>
+                      on August 24, 2023
+                  </p>
+              </div>
+              <!-- Divider-->
+              <hr class="my-4" />
+              <!-- Post preview-->
+              <div class="post-preview">
+                  <a href="post.html">
+                      <h2 class="post-title">Failure is not an option</h2>
+                      <h3 class="post-subtitle">Many say exploration is part of our destiny, but it’s actually our duty to future generations.</h3>
+                  </a>
+                  <p class="post-meta">
+                      Posted by
+                      <a href="#!">person</a>
+                      on July 8, 2023
+                  </p>
+              </div>
+              <!-- Divider-->
+              <hr class="my-4" />
+              <!-- Pager-->
+              <div class="d-flex justify-content-end mb-4"><a class="btn btn-primary text-uppercase" href="#!">Older Posts →</a></div>
+          </div>
+      </div>
+  </div>
+  {% endblock %}
+
