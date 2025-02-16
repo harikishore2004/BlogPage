@@ -12,12 +12,12 @@ app = Flask(__name__)
 app.secret_key = 'hari@sceret$key'
 
 
-app.config['MAIL_SERVER'] = 'smtp.gmail.com'  # SMTP server address
-app.config['MAIL_PORT'] = 587  # SMTP port (TLS)
-app.config['MAIL_USE_TLS'] = True  # Use TLS
-app.config['MAIL_USE_SSL'] = False  # Do not use SSL
-app.config['MAIL_USERNAME'] = os.getenv('Mail_Username')  # Your Gmail address
-app.config['MAIL_PASSWORD'] = os.getenv('Mail_Pswd')  # Your Gmail password
+app.config['MAIL_SERVER'] = 'smtp.gmail.com' 
+app.config['MAIL_PORT'] = 587
+app.config['MAIL_USE_TLS'] = True
+app.config['MAIL_USE_SSL'] = False
+app.config['MAIL_USERNAME'] = os.getenv('Mail_Username') #Featching the email from Envirnoment Variable
+app.config['MAIL_PASSWORD'] = os.getenv('Mail_Pswd') # Featching the app password from Envirnoment Variable
 app.config['MAIL_DEFAULT_SENDER'] = ('Hari Kishore', os.getenv('Mail_Username'))
 mail = Mail(app)
 
@@ -26,7 +26,7 @@ with open('config.json') as c:
     params = json.load(c)["params"]
 
 if (params["localhost"]):
-    # configure the SQLite database, relative to the app instance folder
+    # configure the SQL database
     app.config["SQLALCHEMY_DATABASE_URI"] =  params["local_uri"]
 else:
     app.config["SQLALCHEMY_DATABASE_URI"] =  params["params"]["prod_uri"]
@@ -37,7 +37,6 @@ app.config['UPLOAD_FOLDER'] = params['upload_location']
 db = SQLAlchemy(app)    
 
 class Posts(db.Model):
-    
     sno = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(100),nullable = False)
     tagline = db.Column(db.String(50),nullable = False)
@@ -46,8 +45,7 @@ class Posts(db.Model):
     content = db.Column(db.String(200),nullable = False)
     date = db.Column(db.String(25),nullable = True)
     name = db.Column(db.String(25),nullable = False)
-
-    
+   
 class Contacts(db.Model):
     """sno,name,ph_num,msg,date,email"""
     sno = db.Column(db.Integer, primary_key=True)
@@ -57,20 +55,15 @@ class Contacts(db.Model):
     date = db.Column(db.String(25),nullable = True)
     email = db.Column(db.String(30),nullable = False)
 
-
 @app.route("/")
 def home():
     posts = Posts.query.filter_by().all()
     last = math.ceil(len(posts)/params["nopost"])
-
     page = request.args.get('page')
     if(not str(page).isnumeric()):
         page = 1
-
-
     page = int(page)
     posts = posts[(page-1)*(int(params['nopost'])) : (page-1)*int(params['nopost']) + (int(params['nopost']))]
-
     if(page == 1 and last == 1):
         prev = "#"
         next = "#" 
@@ -91,25 +84,19 @@ def home():
 @app.route("/dashboard", methods=['GET', 'POST'])
 
 def dashboard():
-
     if (('user' in session) and (session['user'] == params['admin_user'])):
             posts = Posts.query.all()
             return render_template('dashboard.html',params = params, posts = posts)
-    
     if request.method=="POST":
-
         username = request.form.get('uname')
-        
         userpass = request.form.get('pass')
-
         if (username== params['admin_user'] and userpass == params['admin_password']):
             session['user'] = username
             posts = Posts.query.all()
             return render_template("dashboard.html", params = params, posts = posts)
-        
     else:
         return render_template("login.html",params = params)
-       
+        
     return render_template("login.html", params=params)
 
 @app.route("/uploader",methods = ["GET","POST"])
@@ -160,23 +147,17 @@ def edit(sno):
 @app.route("/about")
 def about():
     return render_template("about.html")
+    
 # post request
-
-
 @app.route("/post/<string:post_slug>", methods=["GET"])
 def post_route(post_slug):
     # Fetch the post matching the slug
-    post = Posts.query.filter_by(slug=post_slug).first()
-    
+    post = Posts.query.filter_by(slug=post_slug).first()    
     # Handle the case where no post is found
     if post is None:
-        return "Post not found", 404
-    
+        return "Post not found", 404  
     # Render the template with the post data
     return render_template("post.html", post=post)
-
-
-
 
 @app.route("/contact",methods = ['GET','POST'])
 def contact():
