@@ -9,8 +9,7 @@ import math
 
 
 app = Flask(__name__)
-app.secret_key = 'hari@sceret$key'
-
+app.secret_key = os.getenv('SECRET_KEY')
 
 app.config['MAIL_SERVER'] = 'smtp.gmail.com' 
 app.config['MAIL_PORT'] = 587
@@ -173,7 +172,7 @@ def contact():
         db.session.commit()
         # email message
         msg = Message(subject="Mail from webpage ",
-                      recipients=['m.harikishore2604@gmail.com'],
+                      recipients=['abcperson@gmail.com'],
                       body=f'This message was sent by {name}, Phone no. - {phone} \n Message : {message}',
                       date= 144)
         try:
