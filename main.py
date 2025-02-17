@@ -1,4 +1,4 @@
-from flask import Flask,render_template,request,session,redirect
+from flask import Flask,render_template,request,session,redirect,jsonify
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime 
 import json
@@ -142,6 +142,24 @@ def edit(sno):
     post = Posts.query.filter_by(sno=sno).first()
     return render_template('edit.html', params = params, post = post, sno = sno)
 
+    #for api request
+    @app.route("/api/posts", methods=["GET"])
+    def get_posts():
+    posts = Posts.query.all()
+    posts_data = [
+        {
+            "sno": post.sno,
+            "title": post.title,
+            "tagline": post.tagline,
+            "subtitle": post.subtitle,
+            "slug": post.slug,
+            "content": post.content,
+            "date": post.date,
+            "name": post.name
+        }
+        for post in posts
+    ]
+    return jsonify(posts_data)
 
 @app.route("/about")
 def about():
